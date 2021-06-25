@@ -1,0 +1,51 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net472</TargetFramework>
+    <Configurations>Debug;Release</Configurations>
+  </PropertyGroup>
+  
+  <PropertyGroup>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <ApplicationIcon />
+    <OutputType>Library</OutputType>
+    <StartupObject />
+  </PropertyGroup>
+  
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DefineConstants>TRACE;DEBUG;WEB_FORMS</DefineConstants>
+  </PropertyGroup>
+  
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DefineConstants>TRACE;WEB_FORMS</DefineConstants>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="lib\**" />
+    <Compile Remove="LocalizationChecker\**" />
+    <Compile Remove="node_modules\**" />
+    <EmbeddedResource Remove="lib\**" />
+    <EmbeddedResource Remove="LocalizationChecker\**" />
+    <EmbeddedResource Remove="node_modules\**" />
+    <None Remove="lib\**" />
+    <None Remove="LocalizationChecker\**" />
+    <None Remove="node_modules\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+	<PackageReference Include="Microsoft.AspNet.SignalR.Core" Version="2.4.1" />
+	<PackageReference Include="Microsoft.AspNet.WebApi.Core" Version="5.2.7" />
+	<PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+	<PackageReference Include="Owin" Version="1.0.0" />
+	<PackageReference Include="GrapeCity.DioDocs.Common.Windows.ja" Version="4.1.0.660" />
+	<PackageReference Include="GrapeCity.DioDocs.Pdf.ja" Version="4.1.0.660" />
+	<PackageReference Include="GrapeCity.DioDocs.Pdf.Resources.ja" Version="4.1.0.660" />
+	<PackageReference Include="protobuf-net" Version="3.0.62" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Web" />
+  </ItemGroup>  
+
+</Project>

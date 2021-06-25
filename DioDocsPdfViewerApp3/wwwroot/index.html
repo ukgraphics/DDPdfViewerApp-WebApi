@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no">
+    <meta name="theme-color" content="#000000">
+    <title>DioDocs PDFビューワ</title>
+    <!--<link rel="stylesheet" href="https://cdn.materialdesignicons.com/2.8.94/css/materialdesignicons.min.css">-->
+    <script>
+        function loadPdfViewer(selector) {
+            var viewer = new GcPdfViewer(selector, { supportApi: 'https://localhost:44370/api/pdf-viewer' }
+            );
+            viewer.addDefaultPanels();
+            viewer.addAnnotationEditorPanel();
+            viewer.addFormEditorPanel();
+            viewer.beforeUnloadConfirmation = true;
+            viewer.newDocument();
+        }
+    </script>
+</head>
+<body onload="loadPdfViewer('#root')">
+    <div id="root"></div>
+    <script type="text/javascript" src="lib/node_modules/@grapecity/gcpdfviewer/gcpdfviewer.js "></script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <Configurations>Debug;Release</Configurations>
+  </PropertyGroup>
+  
+  <PropertyGroup>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+  </PropertyGroup>
+  
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="lib\**" />
+    <Compile Remove="LocalizationChecker\**" />
+    <Compile Remove="node_modules\**" />
+    <EmbeddedResource Remove="lib\**" />
+    <EmbeddedResource Remove="LocalizationChecker\**" />
+    <EmbeddedResource Remove="node_modules\**" />
+    <None Remove="lib\**" />
+    <None Remove="LocalizationChecker\**" />
+    <None Remove="node_modules\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Localization" Version="2.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Abstractions" Version="2.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.ViewFeatures" Version="2.2.0" />
+    <PackageReference Include="GrapeCity.DioDocs.Common.Windows.ja" Version="4.1.0.662" />
+    <PackageReference Include="GrapeCity.DioDocs.Pdf.ja" Version="4.1.0.662" />
+    <PackageReference Include="GrapeCity.DioDocs.Pdf.Resources.ja" Version="4.1.0.662" />
+    <PackageReference Include="Microsoft.AspNetCore.SignalR" Version="1.1.0" />
+    <PackageReference Include="protobuf-net" Version="3.0.101" />
+  </ItemGroup>  
+
+</Project>
